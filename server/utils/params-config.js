@@ -10,6 +10,7 @@ const params = (fileName) => {
         Bucket: process.env.AWS_BUCKET_NAME || 'user-images-c9ff9e91-123f-44c5-bb18-0c518868be1d',
         Key: `${uuidv4()}.${fileType}`,
         Body: fileName.buffer,
+        ACL: 'public-read', // set access to public
     };
 
     return imageParams;
